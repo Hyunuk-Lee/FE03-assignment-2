@@ -13,19 +13,81 @@
 <!-- 아래와 같은 형식으로 for문을 사용하여 작성하세요 -->
 
 <!-- 데이터 사용 예시 -->
-<div style="display: flex">
-  {% for product in products %}
-  <a href="product/{{product.id}}">
-    <img src="{{product.image_url}}" style="width: 100px" />
-    <p>{{product}}</p>
-    <p>{{product.description}}</p>
-    <p>{{product.origin_price}}원</p>
-    <p>{{product.discount_rate}}%</p>
-    <p>{{product.discount_price}}원</p>
-  </a>
-  {% endfor %}
+
+<br><br><br>
+<div class="category-container">
+  <div class="category active">인기신상랭킹</div>
+  <div class="category">입점특가</div>
+  <div class="category">간편한끼</div>
+  <div class="category">요즘간식</div>
+  <div class="category">주방·리빙</div>
+  <div class="category">뷰티</div>
+  <div class="category">패션·잡화</div>
 </div>
-<!-- 데이터 사용 예시 -->
+<br><br>
+
+<div class="content-wrapper">
+  <div class="sidebar">
+    <div class="filter-title">필터 <span class="reset-icon">🔄 초기화</span></div>
+    <hr />
+    <div class="category-title">카테고리 <span class="arrow">▲</span></div>
+    <div class="checkbox-group">
+      <label class="checkbox-label">
+        <input type="checkbox" />
+        <span>스킨케어·메이크업</span>
+        <span class="count">68</span>
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" />
+        <span>럭셔리뷰티</span>
+        <span class="count">40</span>
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" />
+        <span>간식·과자·떡</span>
+        <span class="count">28</span>
+      </label>
+    </div>
+  </div>
+  <div class="main-area">
+    <div class="sort-bar-container">
+      <div class="result-count">총 508건</div>
+      <div class="sort-options">
+        <span class="sort-item active">추천순</span>
+        <span class="sort-item">신상품순</span>
+        <span class="sort-item">판매량순</span>
+        <span class="sort-item">혜택순</span>
+        <span class="sort-item">낮은 가격순</span>
+        <span class="sort-item" style="margin-right: 145px;">높은 가격순</span>
+      </div>
+    </div>
+    <div class="product-list">
+      <div style = "display: flex">
+        {% for product in products|slice:":3" %}
+          <a href="product/{{product.id}}">
+            <div class="product-card">
+              <img class="product-image" src="https://www.highwaymart.co.kr/Data/Upload/Mall/202001/NRQ4JOEY197I.jpg" alt="상품 이미지">
+              <button class="cart-button">
+                <img src="https://i.pinimg.com/736x/7f/24/92/7f249252404646c08d90976505cb6937.jpg" alt="카트 아이콘"> 담기
+              </button>
+              <div class="product-info">
+                <div class="delivery">샛별배송</div>
+                <div class="name">{{product}}</div>
+                <div class="desc">{{product.description}}</div>
+                <div class="price">
+                  <span class="original">{{product.origin_price}}원</span><br>
+                  <span class="discount">{{product.discount_rate}}%</span>
+                  <span class="final">{{product.discount_price}}원</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+      <!-- 복사하여 다른 상품 카드 반복 -->
+    </div> 
+  </div>
+</div>
 
 <!-- js 파일 -->
 <script src="{% static 'js/main/main_page.js'%}"></script>
