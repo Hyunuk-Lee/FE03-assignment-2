@@ -1,68 +1,58 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-<!-- css 파일 -->
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'css/main/main_page.css'%}"
-/>
-
-<!-- 코드 작성시, 아래 부분(script 태그 이전)은 전체 삭제하고 작성하세요 -->
-
-<!----------------tip!---------------->
-<!-- 상품 데이터베이스는 프로젝트에 넣어뒀어요 -->
-<!-- 아래와 같은 형식으로 for문을 사용하여 작성하세요 -->
-
-<!-- 데이터 사용 예시 -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/main/main_page.css'%}" />
+<script src="https://kit.fontawesome.com/c8e7849976.js" crossorigin="anonymous"></script>
 
 <br><br><br>
-<div class="category-container">
-  <div class="category active">인기신상랭킹</div>
-  <div class="category">입점특가</div>
-  <div class="category">간편한끼</div>
-  <div class="category">요즘간식</div>
-  <div class="category">주방·리빙</div>
-  <div class="category">뷰티</div>
-  <div class="category">패션·잡화</div>
-</div>
-<br><br>
 
-<div class="content-wrapper">
-  <div class="sidebar">
-    <div class="filter-title">필터 <span class="reset-icon">🔄 초기화</span></div>
-    <hr />
-    <div class="category-title">카테고리 <span class="arrow">▲</span></div>
-    <div class="checkbox-group">
-      <label class="checkbox-label">
-        <input type="checkbox" />
-        <span>스킨케어·메이크업</span>
-        <span class="count">68</span>
-      </label>
-      <label class="checkbox-label">
-        <input type="checkbox" />
-        <span>럭셔리뷰티</span>
-        <span class="count">40</span>
-      </label>
-      <label class="checkbox-label">
-        <input type="checkbox" />
-        <span>간식·과자·떡</span>
-        <span class="count">28</span>
-      </label>
-    </div>
+<div class="container">
+  <div class="category-container">
+    <div class="category active">인기신상랭킹</div>
+    <div class="category">입점특가</div>
+    <div class="category">간편한끼</div>
+    <div class="category">요즘간식</div>
+    <div class="category">주방·리빙</div>
+    <div class="category">뷰티</div>
+    <div class="category">패션·잡화</div>
   </div>
-  <div class="main-area">
-    <div class="sort-bar-container">
-      <div class="result-count">총 508건</div>
-      <div class="sort-options">
-        <span class="sort-item active">추천순</span>
-        <span class="sort-item">신상품순</span>
-        <span class="sort-item">판매량순</span>
-        <span class="sort-item">혜택순</span>
-        <span class="sort-item">낮은 가격순</span>
-        <span class="sort-item" style="margin-right: 145px;">높은 가격순</span>
+
+  <div class="content-wrapper">
+    <div class="sidebar">
+      <div class="filter-title">필터 <span class="reset-icon"><i class="fa-solid fa-rotate-right"></i> 초기화</span></div>
+      <hr />
+      <div class="category-title">카테고리 <span class="arrow"><i class="fa-solid fa-caret-up"></i></span></div>
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" />
+          <span>스킨케어·메이크업</span>
+          <span class="count">68</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" />
+          <span>럭셔리뷰티</span>
+          <span class="count">40</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" />
+          <span>간식·과자·떡</span>
+          <span class="count">28</span>
+        </label>
       </div>
     </div>
-    <div class="product-list">
-      <div style = "display: flex">
+
+    <div class="main-area">
+      <div class="sort-bar-container">
+        <div class="result-count">총 508건</div>
+        <div class="sort-options">
+          <span class="sort-item active">추천순</span>
+          <span class="sort-item">신상품순</span>
+          <span class="sort-item">판매량순</span>
+          <span class="sort-item">혜택순</span>
+          <span class="sort-item">낮은 가격순</span>
+          <span class="sort-item">높은 가격순</span>
+        </div>
+      </div>
+
+      <div class="product-list">
         {% for product in products|slice:":3" %}
           <a href="product/{{product.id}}">
             <div class="product-card">
@@ -84,11 +74,9 @@
           </a>
         {% endfor %}
       </div>
-      <!-- 복사하여 다른 상품 카드 반복 -->
-    </div> 
+    </div>
   </div>
 </div>
 
-<!-- js 파일 -->
 <script src="{% static 'js/main/main_page.js'%}"></script>
 {% endblock %}
