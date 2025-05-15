@@ -23,11 +23,12 @@
   color: #333;
   font-size: 16px;
   cursor: pointer;
-  transition: color 0.3s;
 }
 
 .category:hover {
   color: purple;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .category.active {
@@ -70,7 +71,8 @@ hr {
 .category-title {
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -131,7 +133,7 @@ hr {
 
 .sort-item {
   cursor: pointer;
-  transition: font-weight 0.2s;
+  font-weight: bold;
 }
 
 .sort-item:hover {
@@ -156,12 +158,12 @@ hr {
   height: 460px;
   background-color: #fff;
   border: 1px solid #eee;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: sans-serif;
   justify-content: space-between;
+  margin-bottom: 100px;
 }
 
 .product-image {
@@ -171,6 +173,7 @@ hr {
 }
 
 .cart-button {
+  width: 250px;
   margin-top: 10px;
   padding: 6px 12px;
   border: 1px solid #ccc;
@@ -178,8 +181,11 @@ hr {
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   font-size: 14px;
+  border: 0.241px solid var(--stroke-stroke-2, #E2E2E2);
+  border-radius: 0.963px;
 }
 
 .cart-button img {
@@ -217,7 +223,7 @@ hr {
 }
 
 .price {
-  display: flex;
+  display: block;
   align-items: center;
   gap: 8px;
 }
@@ -237,4 +243,12 @@ hr {
 .price .final {
   font-weight: bold;
   font-size: 15px;
+}
+
+.line {
+  width: 1px;
+  height: 16px;
+  background-color: #E2E2E2;
+  display: inline-block;
+  margin: 0 1px;
 }

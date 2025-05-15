@@ -19,7 +19,7 @@
     <div class="sidebar">
       <div class="filter-title">필터 <span class="reset-icon"><i class="fa-solid fa-rotate-right"></i> 초기화</span></div>
       <hr />
-      <div class="category-title">카테고리 <span class="arrow"><i class="fa-solid fa-caret-up"></i></span></div>
+      <div class="category-title">카테고리 <i class="fa-solid fa-chevron-up"></i></div>
       <div class="checkbox-group">
         <label class="checkbox-label">
           <input type="checkbox" />
@@ -29,7 +29,7 @@
         <label class="checkbox-label">
           <input type="checkbox" />
           <span>럭셔리뷰티</span>
-          <span class="count">40</span>
+          <span class="count">24</span>
         </label>
         <label class="checkbox-label">
           <input type="checkbox" />
@@ -44,10 +44,15 @@
         <div class="result-count">총 508건</div>
         <div class="sort-options">
           <span class="sort-item active">추천순</span>
+          <span class="line"></span>
           <span class="sort-item">신상품순</span>
+          <span class="line"></span>
           <span class="sort-item">판매량순</span>
+          <span class="line"></span>
           <span class="sort-item">혜택순</span>
+          <span class="line"></span>
           <span class="sort-item">낮은 가격순</span>
+          <span class="line"></span>
           <span class="sort-item">높은 가격순</span>
         </div>
       </div>
@@ -58,14 +63,15 @@
             <div class="product-card">
               <img class="product-image" src="https://www.highwaymart.co.kr/Data/Upload/Mall/202001/NRQ4JOEY197I.jpg" alt="상품 이미지">
               <button class="cart-button">
-                <img src="https://i.pinimg.com/736x/7f/24/92/7f249252404646c08d90976505cb6937.jpg" alt="카트 아이콘"> 담기
+                <i class="fa-solid fa-cart-shopping"></i> 담기
               </button>
               <div class="product-info">
                 <div class="delivery">샛별배송</div>
                 <div class="name">{{product}}</div>
                 <div class="desc">{{product.description}}</div>
                 <div class="price">
-                  <span class="original">{{product.origin_price}}원</span><br>
+                  <span class="original">{{product.origin_price}}원</span>
+                  <br>
                   <span class="discount">{{product.discount_rate}}%</span>
                   <span class="final">{{product.discount_price}}원</span>
                 </div>
