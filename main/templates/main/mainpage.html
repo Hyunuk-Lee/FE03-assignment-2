@@ -1,4 +1,7 @@
-{% extends 'base.html' %} {% block content %} {% load static %}
+{% extends 'base.html' %} 
+{% block content %} 
+{% load static %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/main/main_page.css'%}" />
 <script src="https://kit.fontawesome.com/c8e7849976.js" crossorigin="anonymous"></script>
 
@@ -17,22 +20,27 @@
 
   <div class="content-wrapper">
     <div class="sidebar">
-      <div class="filter-title">필터 <span class="reset-icon"><i class="fa-solid fa-rotate-right"></i> 초기화</span></div>
+      <div class="filter-title">
+        필터 
+        <span class="reset-icon">
+          <i class="fa-solid fa-rotate-right"></i> 초기화
+        </span>
+      </div>
       <hr />
       <div class="category-title">카테고리 <i class="fa-solid fa-chevron-up"></i></div>
       <div class="checkbox-group">
         <label class="checkbox-label">
-          <input type="checkbox" />
+          <input type="checkbox" data-name="스킨케어·메이크업" data-count="68" />
           <span>스킨케어·메이크업</span>
           <span class="count">68</span>
         </label>
         <label class="checkbox-label">
-          <input type="checkbox" />
+          <input type="checkbox" data-name="럭셔리뷰티" data-count="40" />
           <span>럭셔리뷰티</span>
-          <span class="count">24</span>
+          <span class="count">40</span>
         </label>
         <label class="checkbox-label">
-          <input type="checkbox" />
+          <input type="checkbox" data-name="간식·과자·떡" data-count="28" />
           <span>간식·과자·떡</span>
           <span class="count">28</span>
         </label>
@@ -40,8 +48,11 @@
     </div>
 
     <div class="main-area">
+      <!-- 정렬 바 -->
       <div class="sort-bar-container">
-        <div class="result-count">총 508건</div>
+        <div class="result-count">
+          총 <span id="total-count">508</span>건
+        </div>
         <div class="sort-options">
           <span class="sort-item active">추천순</span>
           <span class="line"></span>
@@ -56,6 +67,8 @@
           <span class="sort-item">높은 가격순</span>
         </div>
       </div>
+
+      <div class="selected-filters" style="display: none;"></div>
 
       <div class="product-list">
         {% for product in products|slice:":3" %}
@@ -84,5 +97,6 @@
   </div>
 </div>
 
+<!-- JavaScript 파일 연결 -->
 <script src="{% static 'js/main/main_page.js'%}"></script>
 {% endblock %}
