@@ -1,6 +1,57 @@
 <!-- 임시 회원가입 페이지 -->
-{% extends 'base.html' %} {% block content %}
-<div class="container">
-  <h2>회원가입</h2>
+{% extends 'base.html' %} {% block content %} {% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/accounts/signup.css'%}"
+/>
+
+<div class="body">
+  <div class="frame30">
+    <div class="signup-heading">회원가입</div>
+    <hr style="width: 640px; height:1px;">
+    <div class="input-list">
+      <div class="signup-input">
+        <div class="bold-text-container">아이디</div>
+        <div class="frame33">
+          <div class="frame32">
+            <input type="text" id="user-id" class="user-input" placeholder="아이디를 입력해주세요" />
+          </div>
+        </div>
+      </div>
+      <div class="signup-input">
+        <div class="bold-text-container">비밀번호</div>
+        <div class="frame33">
+          <div class="frame32">
+            <input type="password" id="user-pw" class="user-input" placeholder="비밀번호를 입력해주세요" />
+          </div>
+          <div class="notice-box">
+            <ul>
+              <li>비밀번호를 8자 이상으로 작성해주세요.</li>
+              <li>영문 대소문자, 숫자, 특수문자를 하나 이상 포함해주세요.</li>
+              <li>사용가능 특수문자  @ ! ? - _</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="signup-input">
+        <div class="bold-text-container">비밀번호 확인</div>
+        <div class="frame33">
+          <div class="frame32">
+            <input type="password" id="user-pw-confirm" class="user-input" placeholder="비밀번호를 한번 더 입력해주세요" />
+          </div>
+          <div class="pw-mismatch" style="display: none; color: red; font-size: 12px; margin-top: 4px;">
+            비밀번호가 일치하지 않습니다!
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr style="width: 640px; height:1px; background: #E2E2E2;">
+  </div>
+  <div class="signup-button">
+    <div class="signup">가입하기</div>
+  </div>
 </div>
+
+<script src="{% static 'js/accounts/signup.js' %}"></script>
 {% endblock %}

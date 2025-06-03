@@ -1,4 +1,5 @@
-/* product detail page - JS */document.addEventListener("DOMContentLoaded", function () {
+/* product detail page - JS */
+document.addEventListener("DOMContentLoaded", function () {
   const minusBtn = document.querySelector(".minus-button");
   const plusBtn = document.querySelector(".plus-button");
   const quantityEl = document.getElementById("quantity");
