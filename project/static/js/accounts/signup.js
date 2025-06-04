@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const userPwInput = document.getElementById("user-pw");
     const userPwConfirmInput = document.getElementById("user-pw-confirm");
     const signupButton = document.querySelector(".signup-button");
-    const signupText = document.querySelector(".signup");
     const pwMismatchMsg = document.querySelector(".pw-mismatch");
 
     // 비밀번호 유효성 검사 함수
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const upper = /[A-Z]/.test(pw);
         const lower = /[a-z]/.test(pw);
         const number = /[0-9]/.test(pw);
-        const special = /[@!?_\-]/.test(pw); // 특수문자 제한
+        const special = /[@!?_\-]/.test(pw); // 허용 특수문자
         return lengthOK && upper && lower && number && special;
     }
 
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const validPw = validatePassword(pwVal);
 
         // 비밀번호 불일치 메시지 조건 출력
-        if (pwVal && pwConfirmVal && pwVal !== pwConfirmVal) {
+        if (pwVal && pwConfirmVal && !passwordsMatch) {
         pwMismatchMsg.style.display = "block";
         } else {
         pwMismatchMsg.style.display = "none";
@@ -41,16 +40,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const canActivate = idVal && pwVal && passwordsMatch && validPw;
 
         if (canActivate) {
-            signupButton.style.backgroundColor = "#5E0080";
-            signupText.style.color = "#fff";
+        signupButton.disabled = false;
+        signupButton.style.backgroundColor = "#5E0080";
+        signupButton.style.color = "#fff";
         } else {
-            signupButton.style.backgroundColor = "#E2E2E2";
-            signupText.style.color = "#999";
+        signupButton.disabled = true;
+        signupButton.style.backgroundColor = "#E2E2E2";
+        signupButton.style.color = "#999";
         }
     }
 
-    // 이벤트 연결
+  // 이벤트 연결
     userIdInput.addEventListener("input", updateUI);
     userPwInput.addEventListener("input", updateUI);
     userPwConfirmInput.addEventListener("input", updateUI);
 });
+

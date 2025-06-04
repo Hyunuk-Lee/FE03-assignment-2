@@ -9,21 +9,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const hasPw = userPwInput.value.trim().length > 0;
 
         // 입력값 있으면 색 변경
-        if (hasId) userIdInput.style.color = "#333";
-        else userIdInput.style.color = "#999";
+        userIdInput.style.color = hasId ? "#333" : "#999";
+        userPwInput.style.color = hasPw ? "#333" : "#999";
 
-        if (hasPw) userPwInput.style.color = "#333";
-        else userPwInput.style.color = "#999";
-
-        // 로그인 버튼 색상 변경
+        // 버튼 활성화 제어
         if (hasId && hasPw) {
-        loginButton.style.backgroundColor = "#5E0080";
+        loginButton.disabled = false;
         } else {
-        loginButton.style.backgroundColor = "#E2E2E2";
+        loginButton.disabled = true;
         }
     }
 
-        // 입력 이벤트 감지
+    // 이벤트 연결
     userIdInput.addEventListener("input", updateState);
     userPwInput.addEventListener("input", updateState);
 });

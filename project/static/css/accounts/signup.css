@@ -58,7 +58,7 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
-    line-height: 20px; /* 142.857% */
+    line-height: 20px;
     letter-spacing: -1px;
 }
 
@@ -83,16 +83,18 @@
 }
 
 .user-input {
-    color: var(--font-font2, #999);
-    text-align: left;
-
-    /* B2 */
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #999;
     font-family: Pretendard;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px; /* 142.857% */
+    line-height: 20px;
     letter-spacing: -1px;
+    text-align: left;
 }
 
 .notice-box {
@@ -101,7 +103,7 @@
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px; /* 133.333% */
+    line-height: 16px;
 }
 
 .signup-button {
@@ -111,29 +113,39 @@
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    background: var(--stroke-stroke-2, #E2E2E2);
-}
-
-.signup {
-    color: var(--font-font2, #999);
-    text-align: center;
-
-    /* Btn */
     font-family: Pretendard;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
+    text-align: center;
+    background-color: #E2E2E2;
+    color: #999;
+    border: none;
+    cursor: not-allowed;
+    margin-top: 32px;
 }
 
-.user-input {
+.signup-button:disabled {
+    background-color: #E2E2E2;
     color: #999;
-    background: transparent;
-    border: none;
-    outline: none;
-    width: 100%;
+    cursor: not-allowed;
+}
+
+.signup-button:enabled {
+    background-color: #5E0080;
+    color: #fff;
+    cursor: pointer;
 }
 
 .pw-mismatch {
     font-family: Pretendard;
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
 }

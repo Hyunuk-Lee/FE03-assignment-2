@@ -9,6 +9,12 @@
     margin-bottom: 100px;
 }
 
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .frame30 {
     display: flex;
     flex-direction: column;
@@ -19,23 +25,18 @@
 
 .login-heading {
     color: #000;
-    text-align: right;
     font-family: Pretendard;
     font-size: 28px;
     font-style: normal;
     font-weight: 600;
-    line-height: 32px; /* 114.286% */
+    line-height: 32px;
     letter-spacing: -1px;
-    margin-bottom: 32px;
 }
 
 .idpw-container {
     display: flex;
     width: 340px;
-    height: 46px;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     gap: 8px;
 }
 
@@ -51,30 +52,14 @@
     border: 1px solid var(--stroke-stroke-1, #CCC);
 }
 
-.user-id {
-    color: var(--font-font2, #999);
-    text-align: right;
-
-    /* B2 */
+.user-input {
+    border: none;
+    outline: none;
     font-family: Pretendard;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px; /* 142.857% */
-    letter-spacing: -1px;
-}
-
-.user-pw {
-    color: var(--font-font2, #999);
-    text-align: right;
-
-    /* B2 */
-    font-family: Pretendard;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px; /* 142.857% */
-    letter-spacing: -1px;
+    color: #999;
+    width: 100%;
+    background: transparent;
 }
 
 .find-idpw-container {
@@ -83,43 +68,35 @@
     justify-content: flex-end;
     align-items: center;
     gap: 4px;
-    margin-top: 32px;
 }
 
 .find-idpw {
     color: var(--font-font-1, #333);
-    text-align: right;
-
-    /* Caption */
     font-family: Pretendard;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px; /* 133.333% */
+    line-height: 16px;
 }
 
 .login-button {
-    display: flex;
     width: 340px;
     padding: 16px 0px;
-    justify-content: center;
-    align-items: center;
     border-radius: 4px;
-    background: var(--stroke-stroke-2, #E2E2E2);
-    margin-top: 48px;
-    margin-bottom: 12px;
-}
-
-.login {
-    color: #FFF;
-    text-align: center;
-
-    /* Btn */
     font-family: Pretendard;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 150% */
+    background-color: #E2E2E2;
+    color: #999;
+    border: none;
+    cursor: not-allowed;
+    margin-top: 48px;
+}
+
+.login-button:enabled {
+    background-color: #5E0080;
+    color: #fff;
+    cursor: pointer;
 }
 
 .signin-button {
@@ -130,26 +107,15 @@
     align-items: center;
     border-radius: 4px;
     border: 1px solid var(--point-main, #5E0080);
+    margin-top: 12px;
 }
 
 .signin {
     color: var(--point-main, #5E0080);
     text-align: center;
-
-    /* Btn */
     font-family: Pretendard;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 150% */
-}
-
-.user-input {
-    border: none;
-    outline: none;
-    font-family: Pretendard;
-    font-size: 14px;
-    color: #999; /* 초기값 */
-    width: 100%;
-    background: transparent;
+    line-height: 24px;
 }
